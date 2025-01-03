@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:protofoilo/protofolio/presentation/screens/main_screen/widgets/custom_text.dart';
 import 'package:protofoilo/protofolio/core/colors_app.dart';
-import 'package:protofoilo/protofolio/presentation/screens/main/widgets/custom_text.dart';
 
 class CustomAppBar extends StatelessWidget {
   const CustomAppBar({
@@ -20,6 +20,12 @@ class CustomAppBar extends StatelessWidget {
         Row(
           spacing: 10,
           children: [
+                CustomText(
+              text: 'About',
+              color: ColorsApp.bgTitle,
+              fontSize: 18,
+              fontWeight: FontWeight.bold,
+            ),
             CustomText(
               text: 'Service',
               color: ColorsApp.bgTitle,

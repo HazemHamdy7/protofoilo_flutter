@@ -1,11 +1,10 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:protofoilo/constants/assets.dart';
 import 'package:protofoilo/protofolio/core/colors_app.dart';
-import 'package:protofoilo/protofolio/presentation/screens/main/widgets/custom_app_bar.dart';
-import 'package:protofoilo/protofolio/presentation/screens/main/widgets/custom_social_icons.dart';
-import 'package:protofoilo/protofolio/presentation/screens/main/widgets/custom_text.dart';
+import 'package:protofoilo/protofolio/presentation/screens/main_screen/widgets/custom_app_bar.dart';
+import 'package:protofoilo/protofolio/presentation/screens/main_screen/widgets/custom_social_icons.dart';
+import 'package:protofoilo/protofolio/presentation/screens/main_screen/widgets/custom_text.dart';
 
 class MainScreen extends StatelessWidget {
   const MainScreen({super.key});
@@ -39,9 +38,14 @@ class MainScreen extends StatelessWidget {
           children: [
             Stack(
               children: [
-                Image.asset(
+                Container(
                   height: MediaQuery.sizeOf(context).height * 0.9,
-                  Assets.imagesBg1,
+                  width: double.infinity,
+                  decoration: BoxDecoration(color: const Color.fromARGB(255, 2, 27, 48)),
+                ),
+                Image.network(
+                  height: MediaQuery.sizeOf(context).height * 0.9,
+               'https://cdn.pixabay.com/photo/2018/10/29/21/46/human-3782189_1280.jpg',
                   fit: BoxFit.cover,
                   width: double.infinity,
                 ),
@@ -71,27 +75,23 @@ class MainScreen extends StatelessWidget {
                           ],
                         ),
                         SizedBox(height: 16),
-                        // AnimatedTextKit(
-                        //   animatedTexts: [
-                        //     ColorizeAnimatedText(
-                        //       'Larry Page',
-                        //       textStyle: colorizeTextStyle,
-                        //       colors: colorizeColors,
-                        //     ),
-                        //     ColorizeAnimatedText(
-                        //       'Bill Gates',
-                        //       textStyle: colorizeTextStyle,
-                        //       colors: colorizeColors,
-                        //     ),
-                        //     ColorizeAnimatedText(
-                        //       'Steve Jobs',
-                        //       textStyle: colorizeTextStyle,
-                        //       colors: colorizeColors,
-                        //     ),
-                        //   ],
-                        //   isRepeatingAnimation: true,
-                        //   onTap: () {},
-                        // ),
+                        AnimatedTextKit(
+                          animatedTexts: [
+                            ColorizeAnimatedText(
+                              'Senure developer',
+                              textStyle: colorizeTextStyle,
+                              colors: colorizeColors,
+                            ),
+                            ColorizeAnimatedText(
+                              'Mobile developer',
+                              textStyle: colorizeTextStyle,
+                              colors: colorizeColors,
+                            ),
+                          ],
+                          isRepeatingAnimation: true,
+                          onTap: () {},
+                        ),
+                        SizedBox(height: 16),
                         CustomText(
                           text: "i build life changeing courses",
                           fontSize: 16,
